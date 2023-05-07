@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import Slider from 'react-slick'
+
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {Link} from 'react-router-dom'
@@ -7,36 +7,7 @@ import {Link} from 'react-router-dom'
 /* Add css to your project */
 import './index.css'
 
-const settings = {
-  dots: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    }
-  ]
-};
+import ReactSlick from '../ReactSlick/slick'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -97,21 +68,7 @@ class TrendingMovies extends Component {
     const {trendingNowData} = this.state
     console.log('trending')
     console.log(trendingNowData)
-    return (
-        <Slider {...settings}>
-          {trendingNowData.map(eachMovie => (
-            <Link to={`/movies/${eachMovie.id}`} key={eachMovie.id}>
-              <li testid="MovieCard" className="slick-item" key={eachMovie.id}>
-                <img
-                  className="logo-image"
-                  src={eachMovie.posterPath}
-                  alt={eachMovie.title}
-                />
-              </li>
-            </Link>
-          ))}
-        </Slider>
-    )
+    return <ReactSlick slickDetails={trendingNowData} />
   }
 
   renderLoadingView = () => (
