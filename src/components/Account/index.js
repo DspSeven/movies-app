@@ -5,12 +5,15 @@ import Footer from '../Footer'
 import './index.css'
 
 const Account = props => {
+  /*
   const username = localStorage.getItem('username')
   const password = localStorage.getItem('password')
   // to convert into astric we can use the repeat function
   // syntax : string.repeat(count);
 
   const passwordInAsterisk = '*'.repeat(password.length)
+  */
+
   const onClickLogout = () => {
     const {history} = props
     Cookies.remove('jwt_token')
@@ -26,8 +29,8 @@ const Account = props => {
         <div className="member-details-container">
           <p className="membership-heading">Member ship</p>
           <div>
-            <p className="membership-email">{username}@gmail.com</p>
-            <p className="membership-password">Password {passwordInAsterisk}</p>
+            <p className="membership-email">dsp@gmail.com</p>
+            <p className="membership-password">Password: ***********</p>
           </div>
         </div>
         <hr className="hr-line" />
