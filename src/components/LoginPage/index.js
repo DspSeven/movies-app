@@ -21,7 +21,7 @@ class LoginPage extends Component {
       expires: 30,
       path: '/',
     })
-    history.replace('/profilepage')
+    history.replace('/')
     const {username, password} = this.state
     localStorage.setItem('username', username)
     localStorage.setItem('password', password)
