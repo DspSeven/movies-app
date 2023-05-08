@@ -1,6 +1,8 @@
 import './index.css'
 import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
 
+import {withRouter} from 'react-router-dom'
+
 const Footer = () => (
   <div className="footer-container">
     <div>
@@ -24,4 +26,4 @@ const Footer = () => (
     </div>
   </div>
 )
-export default Footer
+export default withRouter(Footer)
